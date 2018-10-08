@@ -27,8 +27,9 @@
 #ifndef SHARAKU_UTILTY_ROTATION_H_
 #define SHARAKU_UTILTY_ROTATION_H_
 
+#include <stdint.h>
 #include <math.h>
-#include <sharaku/vector.hpp>
+#include <libsharaku/type/vector.hpp>
 
 // 数学定義
 #ifndef M_PI
@@ -40,7 +41,7 @@
 #endif
 
 // 半径をSteering角度へ変換
-static float
+static inline float
 sharaku_rho2steering(int32_t rho, int32_t wheel_length)
 {
 	register float tan_theta = ((float)wheel_length * M_PI) / rho;
@@ -49,7 +50,7 @@ sharaku_rho2steering(int32_t rho, int32_t wheel_length)
 }
 
 // Steering角度を半径へ変換
-static float
+static inline float
 sharaku_steering2rho(int32_t steering, int32_t wheel_length)
 {
 	register float tan_theta = tan((float)steering * M_PI_180);
@@ -59,7 +60,7 @@ sharaku_steering2rho(int32_t steering, int32_t wheel_length)
 }
 
 // 角度の差分を取得する。leftrightは旋回方向であり、-1, 0, +1を指定する
-static int32_t
+static inline int32_t
 sharaku_differ_degree(int32_t target, int32_t now, int leftright)
 {
 	// 起点Xを0点とした差分を作成する

@@ -39,8 +39,6 @@ endif(NOT CMAKE_TOOLCHAIN_FILE)
 
 include_directories(
 	include
-	../atomic/include
-	../container/include
 	)
 
 # ---------------------------------------------------------------
@@ -67,13 +65,18 @@ set(CMAKE_CXX_FLAGS_MINSIZEREL "${CMAKE_CXX_FLAGS_MINSIZEREL} ${CROSS_FLAGS_CXX}
 
 # ---------------------------------------------------------------
 # testing
-#add_executable(sharaku.pool.test 
-#	)
-#target_link_libraries(sharaku.pool.test
-#	gtest_main
-#	gtest
-#	pthread
-#	)
+add_executable(sharaku.type.test 
+	test/linux/gtest_position.cpp
+	test/linux/gtest_vector.cpp
+	test/linux/gtest_rotation.cpp
+	test/linux/gtest_pid.cpp
+	test/linux/gtest_digital-filter.cpp
+	)
+target_link_libraries(sharaku.type.test
+	gtest_main
+	gtest
+	pthread
+	)
 
 # ---------------------------------------------------------------
 # exsample

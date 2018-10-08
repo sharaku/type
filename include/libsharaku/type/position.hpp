@@ -27,7 +27,7 @@
 #ifndef SHARAKU_MM_POSITION_H_
 #define SHARAKU_MM_POSITION_H_
 
-#include <sharaku/vector.hpp>
+#include <libsharaku/type/vector.hpp>
 
 struct position3 {
  public:
